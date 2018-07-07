@@ -6,7 +6,7 @@ ESP8266 MQTT Temperature Humidity Sensor
 
 ## Hardware Example
 
-<!-- ![Wemos D1 Mini Sensor](diagrams/wemos_d1_sensor.svg) -->
+![Wemos D1 Mini Sensor](diagrams/wemos_d1_sensor.svg)
 
 ## Software Setup
 
