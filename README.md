@@ -21,6 +21,8 @@ ESP8266 MQTT Temperature Humidity Sensor
   > manually install these libraries:
   - ArduinoJson
   - PubSubClient
+  - Adafruit Unified Sensor
+  - DHT sensor library
 
 - Upload to your board of choice (Ctrl+Alt+U). This project was created
   specifically for the `Wemos D1 Mini` but can be configured to work
@@ -29,4 +31,23 @@ ESP8266 MQTT Temperature Humidity Sensor
 ## Example Home Assistant Configuration
 
 ```yaml
+sensor:
+    # Temperature
+  - platform: mqtt
+    state_topic: "sensors/dht22001"
+    name: "DHT22 01 Temperature"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json.temperature | round(2) }}'
+    # Temperature (Feels Like)
+  - platform: mqtt
+    state_topic: "sensors/dht22001"
+    name: "DHT22 01 Temperature (Feels Like)"
+    unit_of_measurement: "°C"
+    value_template: '{{ value_json.heatIndex | round(2) }}'
+    # Humidity
+  - platform: mqtt
+    state_topic: "sensors/dht22001"
+    name: "DHT22 01 Humidity"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.humidity | round(2) }}'
 ```
