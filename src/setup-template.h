@@ -14,3 +14,4 @@ using namespace std;
 #define OTA_PORT 8266
 
 #define SENSOR_PIN D8
+#define DHT_TYPE DHT22
