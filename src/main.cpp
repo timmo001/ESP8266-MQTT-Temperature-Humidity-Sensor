@@ -131,7 +131,7 @@ bool checkBoundSensor(float newValue, float prevValue, float maxDiff) {
 
 void updateState()
 {
-    float newTempValue = dht.readTemperature(true); //to use celsius remove the true text inside the parentheses  
+    float newTempValue = dht.readTemperature(); //to use celsius remove the true text inside the parentheses  
     float newHumValue = dht.readHumidity();
     delay(100);
     if (checkBoundSensor(newTempValue, tempValue, diffTEMP)) {
